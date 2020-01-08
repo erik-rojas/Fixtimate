@@ -1,0 +1,40 @@
+<div class="page" data-name="Contact" style="contain: layout;">
+  <div class="row" style ="margin-top: 60px;">
+      <img src="../img/1.jpg" id = "Contact_profile">
+  </div>
+  <div class="subnavbar" style="margin-top: 200px;">
+    <div class="subnavbar-inner">
+      <div class="segmented segmented-raised">
+        <a class="button tab-link tab-link-active" href="#tab1">Send Message</a>
+        <a class="button tab-link" href="#tab2" onclick="response_view()">View Response</a>
+      </div>
+    </div>
+  </div>
+  <div class="page-content hide-navbar-on-scroll">
+    <div class="tabs">
+      <div class="tab tab-active" id="tab1">
+        <div class="block">
+            <div class="row" style="margin: auto;">
+              <h1>Contact form</h1>
+            </div>
+            <div class="center">
+              <textarea id = "contact_text" placeholder="" style="background-color: #80808030;width: -webkit-fill-available;height: 100px;"></textarea>  
+            </div>
+            <br>
+            <br>
+            <div class="row">
+              <button class="col button button-fill button-round" onclick="send_contact()">Send</button>
+            </div>
+        </div>
+      </div>
+      <div class="tab" id = "tab2">
+        <div class="block">
+          <div class="center">
+            <div class="messages list" id ="all_message" style="height: 1000px;overflow-y: scroll;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

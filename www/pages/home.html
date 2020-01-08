@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2196f3">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="stylesheet" href="../framework7/css/framework7.min.css">
+  <link rel="stylesheet" href="../css/icons.css">
+  <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+  <div id="home">
+    <div class="panel panel-left panel-cover theme-dark">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+            </div>
+          </div>
+          <div class="view" style="margin: 300px 20px;">
+              <p><a herf = "#" class="panel-close link popup-open" data-popup=".popup-profile">Profile</a></p>
+              <p><a class="panel-close tab-link tab-link-active" href="#view-home" id="side_home">Home</a></p>
+              <p><a class="panel-close tab-link tab-link-active" href="#view-contact" id="side_contact">Contact</a></p>
+              <p><a class="panel-close tab-link tab-link-active" href="#view-occurrences" id="side_about">About</a></p>
+              <p><a class="panel-close tab-link tab-link-active" href="#view-about" onclick="onSetting()">Settings</a></p>
+              <p><a class="panel-close tab-link tab-link-active" onclick="Logout()" href="#">Logout</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-success">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link popup-close"><</a>
+              </div>
+              <div class="title sliding">FIXTIMATE</div>
+            </div>
+          </div>
+          
+          <div class="page-content">
+            <div class="block" id = "successID">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-profile">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link popup-close"><</a>
+              </div>
+              <div class="title sliding">FIXTIMATE</div>
+            </div>
+          </div>
+          
+          <div class="page-content">
+            <div class="block">
+              <div class="row">
+                <input id="image-file" type="file" onchange="previewFile()" />
+                <br>
+                <img src="" height="200" alt="Image preview..." id="myImg">
+              </div>
+              <div class="list">
+                <ul>
+                  <li>
+                    <h1>EDIT YOUR DATA</h1>    
+                  </li>
+                </ul>
+                <ul>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="item-input-wrap">
+                            <input type="text" name="profile_firstname" id = "profile_firstname" placeholder="Input your FirstName" required validate>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="item-input-wrap">
+                            <input type="text" name="sign_lastname" id = "profile_lastname" placeholder="Input your LastName" required validate>
+                          </div> 
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-input-wrap">
+                        <input type="Email" name="profile_email" id = "profile_email" placeholder="Email" required validate>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-input-wrap">
+                        <input type="password" name="profile_password" id = "profile_password" placeholder="Input your password" required validate>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-input-wrap">
+                        <input type="tel" name="profile_phoneNumber" id = "profile_phoneNumber" placeholder="Number" required validate>
+                      </div>
+                    </div>
+                  </li>
+                  <div class="list">
+                    <ul>
+                      <li>
+                        <a href="#" class="col button button-fill button-round" id = "profile_send">Send</a>
+                      </li>
+                    </ul>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-my-occurrence">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link popup-close"><</a>
+              </div>
+              <div class="title sliding">FIXTIMATE</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <h1 style="text-align: center;">MY OCCURS</h1>
+            <div class="list media-list">
+              <ul id = "occurence_uls">
+               
+              </ul>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-map">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link popup-close"><</a>
+              </div>
+              <div class="title sliding">FIXTIMATE</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div id="map_settingUI" style="height:700px; width:auto;"></div>
+            <br><br>
+            <div class="row" id= "addressText">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-categorie">
+      <span></span>
+    </div>
+
+    <div class="popup popup-occurs">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link popup-close"><</a>
+              </div>
+              <div class="title sliding">FIXTIMATE</div>
+            </div>
+          </div>
+          <div class="page-content" id = "occursItem">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup-newspage">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link popup-close"><</a>
+              </div>
+              <div class="title sliding">FIXTIMATE</div>
+            </div>
+          </div>
+          <div class="page-content" id = "newsItem">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="left">
+            <a href="#" class="link icon-only panel-open" data-panel="left">
+              <i class="icon material-icons md-only">menu</i>
+            </a>
+          </div>
+          <div class="title sliding">FIXTIMATE</div>
+          <div class="right">
+            <a href="#view-google" class="list-button item-link" id="mapBtn" style="margin-right: 10px;">
+              <i class="icon material-icons md-only">search</i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="fab fab-center-bottom color-black">
+        <a href="#">
+          <!-- Icons For iOS Theme -->
+          <i class="icon f7-icons">close</i>
+          <i class="icon f7-icons">close</i>
+          <!-- Icons For MD Theme -->
+          <i class="icon material-icons">close</i>
+          <i class="icon material-icons">close</i>
+        </a>
+        <!-- FAB speed dial actions -->
+        <div class="fab-buttons fab-buttons-top">
+          <a href="" class = "popup-open" data-popup = ".popup-my-occurrence" onclick="onClickOccursShow()">
+            <i class="icon f7-icons">home</i>
+          </a>
+          <a href="">
+            <i class="icon f7-icons">camera</i>
+          </a>
+          <a href="">
+            <i class="icon f7-icons">gear</i>
+          </a>
+          <a href="">
+            <i class="icon f7-icons">settings</i>
+          </a>
+          <a href="">
+            <i class="icon f7-icons">pie</i>
+          </a>
+        </div>
+      </div>
+      <div class="toolbar tabbar-labels toolbar-bottom-md">
+          <div class="toolbar-inner">
+            <a href="#view-home" class="tab-link tab-link-active" id = "homeBtn">
+              <i class="icon f7-icons ios-only">home</i>
+              <i class="icon f7-icons ios-only icon-ios-fill">home_fill</i>
+              <i class="icon material-icons md-only">home</i>
+            </a>
+
+            <a href="#view-occurrences" class="tab-link" id = "occurrencesBtn">
+              <i class="icon f7-icons ios-only">camera</i>
+              <i class="icon f7-icons ios-only icon-ios-fill">camera_fill</i>
+              <i class="icon material-icons md-only">camera</i>
+            </a>
+            <a href="#view-contact" class="tab-link" id = "contactBtn">
+              <i class="icon f7-icons ios-only">alarm</i>
+              <i class="icon f7-icons ios-only icon-ios-fill">alarm_fill</i>
+              <i class="icon material-icons md-only">alarm</i>
+            </a>
+
+            <a href="#view-about" class="tab-link" id = aboutBtn>
+              <i class="icon f7-icons ios-only">settings</i>
+              <i class="icon f7-icons ios-only icon-ios-fill">settings_fill</i>
+              <i class="icon material-icons md-only">settings</i>
+            </a>
+          </div>
+      </div>
+      <div class="tabs">
+        <div id="view-home" class="page-content tab tab-active">
+          <div class="page" data-name="home">
+            <div class="row" align="center" style="margin-top:70px;"> 
+                <div id = "slideItem">
+                  
+                </div>
+            </div>
+            <div class="row" style=" margin-top: -45px;">
+              <div class="col-md-6" style=" padding-left: 90px;">
+                <a href="#" class="link icon-only arrow_left" onclick="leftBtn()">
+                  <i class="icon f7-icons">arrow_left</i>
+                </a>
+              </div>
+              <div class="col-md-6" style="padding-right: 90px;">
+                <a href="#" class="link icon-only arrow_right" onclick="rightBtn()">
+                  <i class="icon f7-icons">arrow_right</i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Page, data-name contains page name which can be used in page callbacks -->
+          <div class="page" data-name="home" style="margin-top:280px;">
+              <!-- home view -->
+              <div class="page-content infinite-scroll-content">
+                <div class="list media-list">
+                  <ul id = "uls">
+                  </ul>
+                </div>
+                <!-- <div class="preloader infinite-scroll-preloader"></div> -->
+              </div> 
+          </div>
+        </div>
+        <!-- Tabbar for switching views-tabs -->
+        
+
+        <div id="view-contact" class= "page-content tab">
+
+        </div>
+
+        <div id="view-occurrences" class= "page-content tab">
+
+        </div>
+
+        <div id="view-about" class="page-content tab">
+
+        </div>
+
+        <div id = "view-google" class="page-next" style="margin-top: 80px;">
+          <div class="page">
+            <div id="map" style="height:400px; width:auto;"></div>
+            <div data-pagination='{"el": ".swiper-pagination"}' data-space-between="10" data-slides-per-view="3" class="swiper-container swiper-init demo-swiper">
+              <div class="swiper-pagination" id ="google_categorie_page"></div> 
+              <div class="swiper-wrapper" id = "google_categorie"></div>
+            </div>
+          </div>  
+        </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&libraries=places"></script>
+
+        </div>
+      </div>
+    </div>
+    <!-- Views/Tabs container -->
+  </div>
+  <!-- Framework7 library -->
+  <script src="../framework7/js/framework7.min.js"></script>
+  <script src="../js/routes.js"></script>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/jquery.form.js"></script>
+  <script src="../js/homeController.js"></script>
+  <!-- <script src="../dist/dropzone.js"></script>
+  <link rel="stylesheet" type="text/css" href="../dist/dropzone.css"> -->
+</body>
+</html>

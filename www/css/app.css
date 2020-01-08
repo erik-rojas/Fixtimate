@@ -1,0 +1,103 @@
+/* Your app styles here */
+.ios .tabbar-labels .tab-link:not(.tab-link-active) .icon-ios-fill {
+  display: none;
+}
+.ios .tabbar-labels .tab-link.tab-link-active .icon:not(.icon-ios-fill) {
+  display: none;
+}
+
+@media (min-width: 290px) {
+	.myButton {
+	    width: 200px;
+	}
+}
+
+@media (min-width: 360px) {
+	.myButton {
+	    width: 200px;
+	}
+}
+
+@media (min-width: 476px) {
+	.myButton {
+	    width: 200px;
+	}
+}
+
+@media (min-width: 576px) {
+	.myButton {
+	    width: 200px;
+	}
+}
+
+@media (min-width: 720px) {
+	.myButton {
+	    width: 200px;
+	}
+}
+
+@media (min-width: 768px) {
+	.myButton {
+	    width: 200px;
+	}
+}
+
+@media (min-width: 860px) {
+	.myButton {
+	    width: 200px;
+	}
+}
+
+@media (min-width: 992px) {
+	.myButton {
+	    width: 200px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.myButton {
+	    width: 200px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.myButton {
+	    width: 200px;
+	}
+}
+.demo-swiper .swiper-slide {
+  font-size: 25px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: #000;
+}
+.demo-swiper .swiper-slide {
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+.demo-swiper {
+  margin: 0px 0 35px;
+  font-size: 18px;
+  height: 120px;
+}
+.demo-swiper.demo-swiper-auto .swiper-slide {
+  width: 85%;
+}
+.demo-swiper.demo-swiper-auto .swiper-slide:nth-child(2n) {
+  width: 70%;
+}
+.demo-swiper.demo-swiper-auto .swiper-slide:nth-child(3n) {
+  width: 30%;
+}
+.arrow_left {
+	margin-top: 45px;
+	padding: 6px;
+}
+.arrow_right {
+	margin-top: 45px;
+	padding: 6px;
+}

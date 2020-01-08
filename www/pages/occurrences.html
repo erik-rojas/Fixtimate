@@ -1,0 +1,73 @@
+<div class="page" data-name="occurrences">
+  <div class="page-content">
+    <div class="page" style="contain: size;">
+      <div class="row">
+        <h1 style="text-align: center;">Take a picture or select from your gallery</h1>
+      </div>
+      <form enctype="multipart/form-data" method="post" id="uploadform">
+        <div class="row">
+          <div class="col-md-6">
+              <input type="file" name="file" id= "name"/>
+          </div>
+          <h2 style="text-align: center;">Enter the problem description</h2>
+          <textarea id = "description" name = "description" placeholder="" style="background-color: #80808030;width: -webkit-fill-available;height: 100px;"></textarea>
+          <div class="list">
+          <ul>
+            <li class="item-content">
+              <div class="item-input-wrap">
+                <select id= "type_select">
+                </select>      
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="col-md-8">
+                <div class="item-inner">
+                  <div class="item-title item-label">Your Address</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="address" placeholder="Input Your Address" id = "address_city">
+                  </div>
+                </div>  
+              </div>
+              <div class="col-md-4">
+                <div class="item-inner">
+                  <div class="item-input-wrap">
+                    <a href="#" class="button button-raised button-fill myButton" id = "searchBtn"
+                    >Search Address</a>
+                  </div>
+                </div>  
+              </div>
+              
+            </li>
+            <ul>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" name="latitude" placeholder="Latitude" id = "latitude">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" name="longitude" placeholder="Longitude" id = "longitude">
+                </div>  
+              </div>
+            </ul>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <a href="#" class="button button-raised button-fill myButton popup-open" data-popup = ".popup-success" onclick="onClickOcuurenceSend()"> Send -></a>
+                </div>
+              </div>
+            </li> 
+          </ul> 
+        </div>
+         
+        </div> 
+      </form>
+      <div>
+        <div id="map_address" style="height: 400px; width: auto; position: relative; overflow: hidden;">
+        </div>  
+      </div>
+
+    </div>
+  </div>
+  <script src="https://maps.googleapis.com/maps/api/geocode/json?address=[YOUR ADDRESS]&sensor=true"></script>
+
+  <!-- https://maps.googleapis.com/maps/api/geocode/json?address=[YOUR ADDRESS]&sensor=true -->
+</div>
